@@ -1,6 +1,6 @@
 # Task Management API
 
-A simple **Flask + SQLAlchemy** based Task Management REST API with authentication, CRUD operations, filtering, and validation.
+A simple **Flask + SQLAlchemy** based Task Management REST API with authentication, CRUD operation.
 
 ---
 
