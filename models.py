@@ -1,4 +1,6 @@
 from flask_sqlalchemy import SQLAlchemy
+from datetime import datetime
+
 
 db = SQLAlchemy()
 
@@ -11,4 +13,19 @@ class Task(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(200), nullable=False)
     description = db.Column(db.Text)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    due_date = db.Column(db.DateTime) 
+
+    # Enums for status
+    status = db.Column(
+        db.String(10),
+        nullable=False,
+        default='todo' 
+    )
+    # Enums for priority
+    priority = db.Column(
+        db.String(10),
+        nullable=False,
+        default='normal' 
+    )
+    created_at = db.Column(db.DateTime)
+    owner_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=True)

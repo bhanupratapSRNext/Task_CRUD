@@ -2,3 +2,5 @@ Flask
 Flask-Login
 Flask-WTF
 flask_sqlalchemy
+dotenv
+
