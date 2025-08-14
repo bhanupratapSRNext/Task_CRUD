@@ -1,0 +1,36 @@
+<!-- templates/task_create.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Task</title>
+</head>
+<body>
+    <h1>Create a New Task</h1>
+    <form action="{{ url_for('task_routes.create_task') }}" method="POST">
+        <label for="title">Title:</label><br>
+        <input type="text" id="title" name="title" required><br><br>
+
+        <label for="description">Description:</label><br>
+        <textarea id="description" name="description"></textarea><br><br>
+
+        <label for="status">Status:</label><br>
+        <select id="status" name="status">
+            <option value="todo">Todo</option>
+            <option value="progress">Progress</option>
+            <option value="done">Done</option>
+        </select><br><br>
+        <label for="due_date">Due Date:</label><br>
+     <input type="date" id="due_date" name="due_date" required><br><br>
+
+
+        <label for="priority">Priority:</label><br>
+        <select id="priority" name="priority">
+            <option value="low">low</option>
+            <option value="medium" selected>medium</option>
+            <option value="high">high</option>
+        </select><br><br>
+
+        <button type="submit">Create Task</button>
+    </form>
+</body>
+</html>
